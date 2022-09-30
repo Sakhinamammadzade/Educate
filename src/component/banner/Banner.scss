@@ -1,0 +1,47 @@
+#Banner{
+    width: 100%;
+    height: 509px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    position: relative;
+    
+    .section-over{
+        background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);
+        width: 100%;
+        height: 509px;
+        opacity: .8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         flex-direction: column;
+        .banner-text{
+           width: 50%;
+            color: #fff;
+            text-align: center;
+           
+            h5{
+              font-size: 2rem;
+            }
+            h1{
+                font-size:4rem;
+            }
+
+        }
+        .section-search{
+            margin-top: 40px;
+           
+            .search-form{
+                width: 100%;
+              
+                height: 60px;
+                background-color: #fff;
+                display: flex;
+                flex-direction: row;
+            }
+        }
+      
+        
+    }
+}
