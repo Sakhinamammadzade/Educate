@@ -8,7 +8,6 @@ import MyRouter from "./router/MyRouter";
 import store from "./redux/Store";
 
 
-
 function App() {
   return (
       <>
@@ -20,9 +19,7 @@ function App() {
        </BrowserRouter>
       </Provider>
       
-     
-   
-      </>
+     </>
   );
 }
 

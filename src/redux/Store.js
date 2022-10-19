@@ -1,15 +1,19 @@
-import {applyMiddleware,combineReducers,createStore}from" @reduxjs/toolkit";
+import {applyMiddleware,combineReducers,createStore} from "@reduxjs/toolkit";
+import { CourseCategoryReducer } from "./reducers/CourseCategoryReducers";
+import { coursesContentReducer } from "./reducers/CourseContentReducer";
 import { courseReducers } from "./reducers/CourseReducers";
 const {default:thunk}=require("redux-thunk")
 
 
 const reducers=combineReducers({
-    courses:courseReducers
+    courses:courseReducers,
+    category:CourseCategoryReducer,
+    courses_content:coursesContentReducer
 })
 
 
 const initialState={
-    courses:[]
+    
 }
 
 const middleware=[thunk]

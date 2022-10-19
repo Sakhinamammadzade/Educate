@@ -1,26 +1,26 @@
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Banner from "../component/banner/Banner";
 import Course from "../component/courses/Course";
-import Slider from "../component/Slider/Slider";
-import { getCourseActions } from "../redux/actions/CourseActions";
-
-
-
+import { getCourseCategoryActions } from "../redux/actions/CourseCategoryActions";
 
 function Home() {
-  const course=useSelector((state)=>state)
+  const {category}=useSelector((state)=>state.category)
     const dispatch=useDispatch()
    useEffect(() => {
-     dispatch(getCourseActions())
-    
-   }, [])
+     dispatch(getCourseCategoryActions())
+    }, [])
+    console.log(category);
 
   return (
     <>
       <Banner />
-       <Slider catName={"c#"}/>
-       <Course/>
+        {
+          category.map((cat,index)=>(
+            <Course key={index} catId={cat.id} courseName={cat.name}/>
+          ))
+        }
+     
     
     </>
   )
