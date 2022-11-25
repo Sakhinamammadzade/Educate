@@ -33,7 +33,7 @@ export default function CourseCard({ courseId, contentName, coursePhoto, courseA
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  console.log(contentName);
+  // console.log(contentName);
 
   return (
     <Card sx={{ maxWidth: 345 }}>

@@ -13,13 +13,12 @@ function App() {
       <>
       <Provider store={store}>
       <BrowserRouter>
-       <Header/>
+     
        <MyRouter/>
-       
        </BrowserRouter>
+       
       </Provider>
-      
-     </>
+      </>
   );
 }
 

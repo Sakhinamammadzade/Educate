@@ -5,6 +5,7 @@ import { useParams } from 'react-router';
 import { getCoursesByIdAction } from '../redux/actions/CourseActions';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Header from '../component/header/Header';
 
 // List, ListItem, ListItemText, Rating,
 function CourseDetail  (){
@@ -20,10 +21,11 @@ function CourseDetail  (){
     useState(() => {
         dispatch(getCoursesByIdAction(id))
     }, [])
-
+    
     console.log(courses)
     return (
         <>
+        <Header/>
             <Grid container margin="auto" width="70%" spacing={4}>
                 <Grid item lg={8}>
                       <h1>{courses.name}</h1>
@@ -34,7 +36,7 @@ function CourseDetail  (){
                     {
                           courses.courseContents &&
                           courses.courseContents.map((c, index) => (
-                              <Accordion key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
+                              <Accordion  key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
                                   <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                                       <Typography>{c.contentName}</Typography>
                                    <ArrowDropDownIcon/>
